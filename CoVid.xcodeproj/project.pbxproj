@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640318A124BF11FC00863F5A /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A024BF11FC00863F5A /* MyImageView.swift */; };
+		640318A324BF186200863F5A /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A224BF186200863F5A /* SummaryView.swift */; };
 		649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C324BF03CE00769554 /* AppDelegate.swift */; };
 		649ED2C624BF03CE00769554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C524BF03CE00769554 /* SceneDelegate.swift */; };
 		649ED2C824BF03CE00769554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C724BF03CE00769554 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640318A024BF11FC00863F5A /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
+		640318A224BF186200863F5A /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		649ED2C024BF03CE00769554 /* CoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649ED2C324BF03CE00769554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649ED2C524BF03CE00769554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				649ED2C324BF03CE00769554 /* AppDelegate.swift */,
 				649ED2C524BF03CE00769554 /* SceneDelegate.swift */,
 				649ED2C724BF03CE00769554 /* ContentView.swift */,
+				640318A224BF186200863F5A /* SummaryView.swift */,
+				640318A024BF11FC00863F5A /* MyImageView.swift */,
 				649ED2C924BF03CF00769554 /* Assets.xcassets */,
 				649ED2CE24BF03CF00769554 /* LaunchScreen.storyboard */,
 				649ED2D124BF03CF00769554 /* Info.plist */,
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640318A124BF11FC00863F5A /* MyImageView.swift in Sources */,
 				649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */,
+				640318A324BF186200863F5A /* SummaryView.swift in Sources */,
 				649ED2C624BF03CE00769554 /* SceneDelegate.swift in Sources */,
 				649ED2C824BF03CE00769554 /* ContentView.swift in Sources */,
 			);

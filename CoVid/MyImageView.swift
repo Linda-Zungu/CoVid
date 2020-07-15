@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct MyImageView: View {
+    var imageName: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("use_mask_black_woman1-1")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
 struct MyImageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyImageView()
+        MyImageView(imageName: "use_mask_black_woman1-1")
     }
 }
