@@ -23,23 +23,27 @@ struct ContentView: View {
                     Button(action: {
                         print("Tap")
                     }, label: {
-                        RoundedRectangle(cornerRadius: 30)
-                            .frame(width: 250, height: 60, alignment: .center)
-                            .shadow(radius: 20, y: 12)
-                            .foregroundColor(.white)
-                        .overlay(
-                            Text("South Africa")
-                                .font(.headline)
-                                .shadow(radius: 5, y: 6)
-                        )
+                        Text("South Africa")
+                            .font(.headline)
+                            .padding()
+                            .padding(.horizontal, 30)
+                            .background(BlurView(style: .systemMaterial))
+                            .cornerRadius(40)
+                            .shadow(radius: 25, y: 8)
                     })
+                    
                     VStack{
                         SummaryView()
                             .padding(.top, 250)
                     }
+                    
+                    LottieView(fileName: "TwitterHeart")
+                        .background(BlurView(style: .systemMaterial))
+                        .padding()
+                        .cornerRadius(100)
+                    
                 }
                 Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height): 45)
-                
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
