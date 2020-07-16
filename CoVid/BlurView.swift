@@ -20,9 +20,3 @@ struct BlurView: UIViewRepresentable {
         uiView.effect = UIBlurEffect(style: style)
     }
 }
-
-//struct BlurView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BlurView()
-//    }
-//}
