@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		640318A124BF11FC00863F5A /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A024BF11FC00863F5A /* MyImageView.swift */; };
 		640318A324BF186200863F5A /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A224BF186200863F5A /* SummaryView.swift */; };
+		642437C324BFD3EE002214B8 /* 17856-defender-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */; };
 		643CE87F24BF7CCA009AD741 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE87E24BF7CCA009AD741 /* BlurView.swift */; };
 		643CE88224BFB278009AD741 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 643CE88124BFB278009AD741 /* Lottie */; };
 		643CE8BC24BFB38D009AD741 /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE88424BFB38D009AD741 /* Switch.json */; };
@@ -73,11 +74,13 @@
 		649ED2CA24BF03CF00769554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2C924BF03CF00769554 /* Assets.xcassets */; };
 		649ED2CD24BF03CF00769554 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */; };
 		649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CE24BF03CF00769554 /* LaunchScreen.storyboard */; };
+		64F59B9224BFC2A5005729D0 /* 20546-i-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		640318A024BF11FC00863F5A /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		640318A224BF186200863F5A /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17856-defender-coronavirus.json"; sourceTree = "<group>"; };
 		643CE87E24BF7CCA009AD741 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		643CE88424BFB38D009AD741 /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		643CE88524BFB38D009AD741 /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		649ED2CF24BF03CF00769554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		649ED2D124BF03CF00769554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20546-i-stay-at-home.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 		643CE88324BFB38D009AD741 /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */,
+				64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */,
 				643CE88424BFB38D009AD741 /* Switch.json */,
 				643CE88524BFB38D009AD741 /* TwitterHeart.json */,
 				643CE88624BFB38D009AD741 /* 9squares-AlBoardman.json */,
@@ -344,6 +350,7 @@
 				643CE8E124BFB38D009AD741 /* LottieLogo2.json in Resources */,
 				649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */,
 				643CE8D024BFB38D009AD741 /* E.json in Resources */,
+				64F59B9224BFC2A5005729D0 /* 20546-i-stay-at-home.json in Resources */,
 				643CE8F024BFB38D009AD741 /* DisableNodesTest.json in Resources */,
 				643CE8DD24BFB38D009AD741 /* W.json in Resources */,
 				643CE8BF24BFB38D009AD741 /* MotionCorpse-Jrcanest.json in Resources */,
@@ -369,6 +376,7 @@
 				643CE8C724BFB38D009AD741 /* Y.json in Resources */,
 				643CE8E524BFB38D009AD741 /* Keypath.json in Resources */,
 				643CE8D424BFB38D009AD741 /* D.json in Resources */,
+				642437C324BFD3EE002214B8 /* 17856-defender-coronavirus.json in Resources */,
 				643CE8BC24BFB38D009AD741 /* Switch.json in Resources */,
 				643CE8F224BFB38D009AD741 /* timeremap.json in Resources */,
 				643CE8DB24BFB38D009AD741 /* Z.json in Resources */,

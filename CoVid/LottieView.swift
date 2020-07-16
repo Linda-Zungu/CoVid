@@ -33,6 +33,7 @@ struct LottieView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
+        animationView.reloadImages()
     }
 }
 

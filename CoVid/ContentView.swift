@@ -10,48 +10,53 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView{
-            VStack{
-                ZStack{
-                    VStack{
-                        MyImageView(imageName: "use_mask_black_woman1-1")
-                            .cornerRadius(checkHeight() ? 30: 0)
+        ZStack{
+            ScrollView{
+                VStack{
+                    ZStack{
+                        VStack{
+                            LottieView(fileName: "20546-i-stay-at-home")
+                                .background(
+                                    BlurView(style: .systemUltraThinMaterialLight)
+                                        .cornerRadius(checkHeight() ? 30: 0)
+                                        .shadow(radius: 30)
+                                        .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
+                                )
+                                .padding(.bottom, 26)
 
-                        Spacer()
+                            Spacer(minLength: 310)
+                            Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height): 140)
+                        }
+                        
+                        Button(action: {
+                            print("Tap")
+                        }, label: {
+                            Text("South Africa")
+                                .font(.headline)
+                                .padding()
+                                .padding(.horizontal, 30)
+                                .background(
+                                    BlurView(style: .systemUltraThinMaterialLight)
+                                        .cornerRadius(40)
+                                        .shadow(radius: 30, y: 7)
+                                )
+                                .padding(.bottom, (checkHeight()) ? 180 : 135)
+                        })
+                        
+                        VStack{
+                            SummaryView()
+                                .padding(.top, (checkHeight()) ? 30 : 75)
+                        }
                     }
-                    
-                    Button(action: {
-                        print("Tap")
-                    }, label: {
-                        Text("South Africa")
-                            .font(.headline)
-                            .padding()
-                            .padding(.horizontal, 30)
-                            .background(BlurView(style: .systemMaterial))
-                            .cornerRadius(40)
-                            .shadow(radius: 25, y: 8)
-                    })
-                    
-                    VStack{
-                        SummaryView()
-                            .padding(.top, 250)
-                    }
-                    
-                    LottieView(fileName: "TwitterHeart")
-                        .background(BlurView(style: .systemMaterial))
-                        .padding()
-                        .cornerRadius(100)
-                    
                 }
-                Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height): 45)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
         .edgesIgnoringSafeArea(.all)
     }
     
     func checkHeight() -> Bool{
-        return UIScreen.main.bounds.height > 750
+        return UIScreen.main.bounds.height > 740
     }
 }
 
