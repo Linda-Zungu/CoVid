@@ -30,6 +30,9 @@ struct ContentView: View {
     @State private var summary = [Countries]()
     @State var show = true
     
+    @State var lst = ["Hello", "World", "I am  here", "Nice", "South Africa"]
+    @State var selectedCountry = 0
+    
     var body: some View {
         ZStack{
             Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
@@ -49,6 +52,7 @@ struct ContentView: View {
                             Spacer(minLength: 310)
                             Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height) : 140)
                         }
+                        
                         VStack{
                             SummaryView()
                                 .padding(.top, (checkHeight()) ? 30 : 75)
@@ -58,21 +62,33 @@ struct ContentView: View {
                             print("Tap")
                             self.show.toggle()
                         }, label: {
-                            Text("South Africa")
-                                .padding(.bottom, show ? 0 : 280)
-                                .frame(width: show ? 100 : UIScreen.main.bounds.width-130, height: show ? 20 : 320)
-                                .font(.headline)
-                                .foregroundColor((colorScheme == .dark) ? .white : .black)
-                                .padding()
-                                .padding(.horizontal, 30)
-                                .background(
-                                    BlurView(style: .systemUltraThinMaterial)
-                                        .cornerRadius(40)
-                                        .shadow(radius: 30, y: 7)
+                            ZStack {
+                                Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
+                                    .padding(.bottom, show ? 0 : 250/*280*/)
+                                    .frame(width: show ? 100 : UIScreen.main.bounds.width-130, height: show ? 20 : 270 /*320*/)
+                                    .font(.headline)
+                                    .foregroundColor((colorScheme == .dark) ? .white : .black)
+                                    .padding()
+                                    .padding(.horizontal, 30)
+                                    .background(
+                                        BlurView(style: .systemUltraThinMaterial)
+                                            .cornerRadius(40)
+                                            .shadow(radius: 30, y: 7)
                                 )
-                                .padding(.bottom, (checkHeight()) ? 180 : 135)
+                                
+                                if show == false{
+                                    Picker(selection: $selectedCountry, label: Text("Choose Country"), content: {
+                                        ForEach(0..<summary.count) {
+                                            Text(self.summary[$0].Country)
+                                        }
+                                    })
+                                    .labelsHidden()
+                                }
+                            }
+                            
                         })
                         .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5))
+                        .padding(.bottom, (checkHeight()) ? 179 : 135)//position of the country button on the ZStack
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

@@ -74,6 +74,7 @@
 		649ED2CA24BF03CF00769554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2C924BF03CF00769554 /* Assets.xcassets */; };
 		649ED2CD24BF03CF00769554 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */; };
 		649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CE24BF03CF00769554 /* LaunchScreen.storyboard */; };
+		64CF90B624C10B2E0043D2B5 /* 17801-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */; };
 		64F59B9224BFC2A5005729D0 /* 20546-i-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		649ED2CF24BF03CF00769554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		649ED2D124BF03CF00769554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17801-stay-at-home.json"; sourceTree = "<group>"; };
 		64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20546-i-stay-at-home.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 		643CE88324BFB38D009AD741 /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */,
 				642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */,
 				64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */,
 				643CE88424BFB38D009AD741 /* Switch.json */,
@@ -353,6 +356,7 @@
 				64F59B9224BFC2A5005729D0 /* 20546-i-stay-at-home.json in Resources */,
 				643CE8F024BFB38D009AD741 /* DisableNodesTest.json in Resources */,
 				643CE8DD24BFB38D009AD741 /* W.json in Resources */,
+				64CF90B624C10B2E0043D2B5 /* 17801-stay-at-home.json in Resources */,
 				643CE8BF24BFB38D009AD741 /* MotionCorpse-Jrcanest.json in Resources */,
 				643CE8EF24BFB38D009AD741 /* PinJump.json in Resources */,
 				643CE8C824BFB38D009AD741 /* U.json in Resources */,
