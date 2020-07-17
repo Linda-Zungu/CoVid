@@ -29,8 +29,7 @@ struct ContentView: View {
     
     @State private var summary = [Countries]()
     @State var show = true
-    
-    @State var lst = ["Hello", "World", "I am  here", "Nice", "South Africa"]
+    @State var removeLaunchScreen = true
     @State var selectedCountry = 0
     
     var body: some View {
@@ -40,7 +39,8 @@ struct ContentView: View {
                 VStack{
                     ZStack{
                         VStack{
-                            LottieView(fileName: "20546-i-stay-at-home")
+                            if removeLaunchScreen == false{
+                                LottieView(fileName: "20546-i-stay-at-home")
                                 .background(
                                     BlurView(style: .systemUltraThinMaterial)
                                         .cornerRadius(checkHeight() ? 30 : 0)
@@ -48,6 +48,7 @@ struct ContentView: View {
                                         .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
                                 )
                                 .padding(.bottom, 26)
+                            }
 
                             Spacer(minLength: 310)
                             Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height) : 140)
@@ -87,15 +88,21 @@ struct ContentView: View {
                             }
                             
                         })
-                        .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5))
+                        .animation(.spring(response: 0.4, dampingFraction: 0.67, blendDuration: 0.9))
                         .padding(.bottom, (checkHeight()) ? 179 : 135)//position of the country button on the ZStack
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
+            
+            StartupView()
+                .frame(width: removeLaunchScreen ? UIScreen.main.bounds.width : 0, height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+                .animation(.easeInOut)
+                .onAppear(perform: remove)
         }
         .edgesIgnoringSafeArea(.all)
-    .onAppear(perform: loadData)
+        .onAppear(perform: loadData)
+    
     }
     
     func checkHeight() -> Bool{
@@ -126,10 +133,16 @@ struct ContentView: View {
             }
         }.resume()
     }
+    
+    func remove(){
+        DispatchQueue.main.asyncAfter(deadline: .now()+2.7){
+            self.removeLaunchScreen.toggle()
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().colorScheme(.dark)
+        ContentView()//.colorScheme(.dark)
     }
 }
