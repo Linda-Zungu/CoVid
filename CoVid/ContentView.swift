@@ -32,6 +32,10 @@ struct ContentView: View {
     @State var removeLaunchScreen = true
     @State var selectedCountry = 0
     
+    @State var globalTCases = 0
+    @State var globalDCases = 0
+    @State var globalRCases = 0
+    
     var body: some View {
         ZStack{
             Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
@@ -39,7 +43,7 @@ struct ContentView: View {
                 VStack{
                     ZStack{
                         VStack{
-                            if removeLaunchScreen == false{
+                            if removeLaunchScreen == false{//turn back to false
                                 LottieView(fileName: "20546-i-stay-at-home")
                                 .background(
                                     BlurView(style: .systemUltraThinMaterial)
@@ -55,8 +59,8 @@ struct ContentView: View {
                         }
                         
                         VStack{
-                            SummaryView()
-                                .padding(.top, (checkHeight()) ? 30 : 75)
+                            SummaryView(globalTotalCases: globalTCases, globalDeathCases: globalDCases, globalRecoveredCases: globalRCases)
+                                .padding(.top, (checkHeight()) ? 80 : 125)
                         }
                         
                         Button(action: {
@@ -88,8 +92,8 @@ struct ContentView: View {
                             }
                             
                         })
-                        .animation(.spring(response: 0.4, dampingFraction: 0.67, blendDuration: 0.9))
-                        .padding(.bottom, (checkHeight()) ? 179 : 135)//position of the country button on the ZStack
+                            .animation(.spring(response: 0.4, dampingFraction: 0.67, blendDuration: 0.9))
+                            .padding(.bottom, (checkHeight()) ? 179 : 135)//position of the country button on the ZStack
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -97,11 +101,14 @@ struct ContentView: View {
             
             StartupView()
                 .frame(width: removeLaunchScreen ? UIScreen.main.bounds.width : 0, height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-                .animation(.easeInOut)
+//                .cornerRadius(removeLaunchScreen ? 0 : 550)
+                .opacity(removeLaunchScreen ? 1 : 0)
+                .animation(Animation.easeInOut(duration: 0.8))
+
                 .onAppear(perform: remove)
         }
         .edgesIgnoringSafeArea(.all)
-        .onAppear(perform: loadData)
+        .onAppear(perform: self.loadData)
     
     }
     
@@ -123,10 +130,13 @@ struct ContentView: View {
                     
                     DispatchQueue.main.async {
                         self.summary = decodedResponse.Countries
-//                        print(self.summary[0].Country)
-//                        for i in 0...self.summary.count-1{
-//                            self.Cou
-//                        }
+//                        print(self.summary[0].TotalConfirmed)
+                        for i in 0...self.summary.count-1{
+                            self.globalTCases += self.summary[i].TotalConfirmed
+                            self.globalDCases += self.summary[i].TotalDeaths
+                            self.globalRCases += self.summary[i].TotalRecovered
+                        }
+                        print(self.globalTCases)
                     }
                     return
                 }

@@ -76,6 +76,8 @@
 		649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CE24BF03CF00769554 /* LaunchScreen.storyboard */; };
 		64CF90B624C10B2E0043D2B5 /* 17801-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */; };
 		64E90E5024C135A20074DEE2 /* StartupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E90E4F24C135A20074DEE2 /* StartupView.swift */; };
+		64E90E5224C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json in Resources */ = {isa = PBXBuildFile; fileRef = 64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */; };
+		64E90E5424C151F40074DEE2 /* 26904-world.json in Resources */ = {isa = PBXBuildFile; fileRef = 64E90E5324C151F40074DEE2 /* 26904-world.json */; };
 		64F59B9224BFC2A5005729D0 /* 20546-i-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,8 @@
 		649ED2D124BF03CF00769554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17801-stay-at-home.json"; sourceTree = "<group>"; };
 		64E90E4F24C135A20074DEE2 /* StartupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupView.swift; sourceTree = "<group>"; };
+		64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17699-covid-19.json 00-32-22-391.json"; sourceTree = "<group>"; };
+		64E90E5324C151F40074DEE2 /* 26904-world.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "26904-world.json"; sourceTree = "<group>"; };
 		64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "20546-i-stay-at-home.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,8 @@
 		643CE88324BFB38D009AD741 /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				64E90E5324C151F40074DEE2 /* 26904-world.json */,
+				64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */,
 				64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */,
 				642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */,
 				64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */,
@@ -367,6 +373,7 @@
 				643CE8EC24BFB38D009AD741 /* setValueTest.json in Resources */,
 				643CE8D124BFB38D009AD741 /* Apostrophe.json in Resources */,
 				643CE8ED24BFB38D009AD741 /* Zoom.json in Resources */,
+				64E90E5224C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json in Resources */,
 				643CE8E624BFB38D009AD741 /* IconTransitions.json in Resources */,
 				643CE8D324BFB38D009AD741 /* Q.json in Resources */,
 				643CE8DF24BFB38D009AD741 /* HamburgerArrow.json in Resources */,
@@ -378,6 +385,7 @@
 				643CE8E724BFB38D009AD741 /* vcTransition2.json in Resources */,
 				643CE8EE24BFB38D009AD741 /* keypathTest.json in Resources */,
 				643CE8C124BFB38D009AD741 /* T.json in Resources */,
+				64E90E5424C151F40074DEE2 /* 26904-world.json in Resources */,
 				643CE8E924BFB38D009AD741 /* base64Test.json in Resources */,
 				643CE8DE24BFB38D009AD741 /* B.json in Resources */,
 				643CE8C724BFB38D009AD741 /* Y.json in Resources */,
