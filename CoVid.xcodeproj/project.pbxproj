@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		640318A124BF11FC00863F5A /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A024BF11FC00863F5A /* MyImageView.swift */; };
 		640318A324BF186200863F5A /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A224BF186200863F5A /* SummaryView.swift */; };
-		642437C324BFD3EE002214B8 /* 17856-defender-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */; };
 		643CE87F24BF7CCA009AD741 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE87E24BF7CCA009AD741 /* BlurView.swift */; };
 		643CE88224BFB278009AD741 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 643CE88124BFB278009AD741 /* Lottie */; };
 		643CE8BC24BFB38D009AD741 /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE88424BFB38D009AD741 /* Switch.json */; };
@@ -68,12 +67,16 @@
 		643CE8F124BFB38D009AD741 /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE8BA24BFB38D009AD741 /* LottieLogo1_masked.json */; };
 		643CE8F224BFB38D009AD741 /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE8BB24BFB38D009AD741 /* timeremap.json */; };
 		643CE8F424BFB69A009AD741 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE8F324BFB69A009AD741 /* LottieView.swift */; };
+		647526B724C6386B00196D60 /* 17856-defender-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */; };
+		6497DB9E24C6274F007309BF /* 21163-washing-hands.json in Resources */ = {isa = PBXBuildFile; fileRef = 6497DB9D24C6274F007309BF /* 21163-washing-hands.json */; };
 		649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C324BF03CE00769554 /* AppDelegate.swift */; };
 		649ED2C624BF03CE00769554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C524BF03CE00769554 /* SceneDelegate.swift */; };
 		649ED2C824BF03CE00769554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C724BF03CE00769554 /* ContentView.swift */; };
 		649ED2CA24BF03CF00769554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2C924BF03CF00769554 /* Assets.xcassets */; };
 		649ED2CD24BF03CF00769554 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */; };
 		649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 649ED2CE24BF03CF00769554 /* LaunchScreen.storyboard */; };
+		64CF873A24C61CDA0080BCC9 /* 19823-stay-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64CF873924C61CDA0080BCC9 /* 19823-stay-home.json */; };
+		64CF873C24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 64CF873B24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json */; };
 		64CF90B624C10B2E0043D2B5 /* 17801-stay-at-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */; };
 		64E90E5024C135A20074DEE2 /* StartupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E90E4F24C135A20074DEE2 /* StartupView.swift */; };
 		64E90E5224C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json in Resources */ = {isa = PBXBuildFile; fileRef = 64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */; };
@@ -84,7 +87,6 @@
 /* Begin PBXFileReference section */
 		640318A024BF11FC00863F5A /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		640318A224BF186200863F5A /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17856-defender-coronavirus.json"; sourceTree = "<group>"; };
 		643CE87E24BF7CCA009AD741 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		643CE88424BFB38D009AD741 /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		643CE88524BFB38D009AD741 /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
@@ -142,6 +144,8 @@
 		643CE8BA24BFB38D009AD741 /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1_masked.json; sourceTree = "<group>"; };
 		643CE8BB24BFB38D009AD741 /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
 		643CE8F324BFB69A009AD741 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17856-defender-coronavirus.json"; sourceTree = "<group>"; };
+		6497DB9D24C6274F007309BF /* 21163-washing-hands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "21163-washing-hands.json"; sourceTree = "<group>"; };
 		649ED2C024BF03CE00769554 /* CoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649ED2C324BF03CE00769554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649ED2C524BF03CE00769554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		649ED2CF24BF03CF00769554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		649ED2D124BF03CF00769554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CF873924C61CDA0080BCC9 /* 19823-stay-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19823-stay-home.json"; sourceTree = "<group>"; };
+		64CF873B24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "18939-soap-vs-coronavirus.json"; sourceTree = "<group>"; };
 		64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17801-stay-at-home.json"; sourceTree = "<group>"; };
 		64E90E4F24C135A20074DEE2 /* StartupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupView.swift; sourceTree = "<group>"; };
 		64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17699-covid-19.json 00-32-22-391.json"; sourceTree = "<group>"; };
@@ -172,10 +178,13 @@
 		643CE88324BFB38D009AD741 /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */,
+				6497DB9D24C6274F007309BF /* 21163-washing-hands.json */,
+				64CF873B24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json */,
+				64CF873924C61CDA0080BCC9 /* 19823-stay-home.json */,
 				64E90E5324C151F40074DEE2 /* 26904-world.json */,
 				64E90E5124C14F9E0074DEE2 /* 17699-covid-19.json 00-32-22-391.json */,
 				64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */,
-				642437C224BFD3EE002214B8 /* 17856-defender-coronavirus.json */,
 				64F59B9124BFC2A5005729D0 /* 20546-i-stay-at-home.json */,
 				643CE88424BFB38D009AD741 /* Switch.json */,
 				643CE88524BFB38D009AD741 /* TwitterHeart.json */,
@@ -359,6 +368,7 @@
 				643CE8CC24BFB38D009AD741 /* F.json in Resources */,
 				643CE8C524BFB38D009AD741 /* M.json in Resources */,
 				643CE8D824BFB38D009AD741 /* V.json in Resources */,
+				64CF873A24C61CDA0080BCC9 /* 19823-stay-home.json in Resources */,
 				643CE8E124BFB38D009AD741 /* LottieLogo2.json in Resources */,
 				649ED2D024BF03CF00769554 /* LaunchScreen.storyboard in Resources */,
 				643CE8D024BFB38D009AD741 /* E.json in Resources */,
@@ -367,6 +377,7 @@
 				643CE8DD24BFB38D009AD741 /* W.json in Resources */,
 				64CF90B624C10B2E0043D2B5 /* 17801-stay-at-home.json in Resources */,
 				643CE8BF24BFB38D009AD741 /* MotionCorpse-Jrcanest.json in Resources */,
+				6497DB9E24C6274F007309BF /* 21163-washing-hands.json in Resources */,
 				643CE8EF24BFB38D009AD741 /* PinJump.json in Resources */,
 				643CE8C824BFB38D009AD741 /* U.json in Resources */,
 				643CE8CA24BFB38D009AD741 /* R.json in Resources */,
@@ -380,6 +391,8 @@
 				643CE8E424BFB38D009AD741 /* Watermelon.json in Resources */,
 				643CE8CB24BFB38D009AD741 /* G.json in Resources */,
 				643CE8E224BFB38D009AD741 /* Boat_Loader.json in Resources */,
+				647526B724C6386B00196D60 /* 17856-defender-coronavirus.json in Resources */,
+				64CF873C24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json in Resources */,
 				643CE8EA24BFB38D009AD741 /* Switch_States.json in Resources */,
 				643CE8C024BFB38D009AD741 /* TwitterHeartButton.json in Resources */,
 				643CE8E724BFB38D009AD741 /* vcTransition2.json in Resources */,
@@ -391,7 +404,6 @@
 				643CE8C724BFB38D009AD741 /* Y.json in Resources */,
 				643CE8E524BFB38D009AD741 /* Keypath.json in Resources */,
 				643CE8D424BFB38D009AD741 /* D.json in Resources */,
-				642437C324BFD3EE002214B8 /* 17856-defender-coronavirus.json in Resources */,
 				643CE8BC24BFB38D009AD741 /* Switch.json in Resources */,
 				643CE8F224BFB38D009AD741 /* timeremap.json in Resources */,
 				643CE8DB24BFB38D009AD741 /* Z.json in Resources */,

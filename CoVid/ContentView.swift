@@ -30,7 +30,7 @@ struct ContentView: View {
     @State private var summary = [Countries]()
     @State var show = true
     @State var removeLaunchScreen = true
-    @State var selectedCountry = 0
+    @State var selectedCountry = 2
     
     @State var globalTCases = 0
     @State var globalDCases = 0
@@ -39,32 +39,32 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-            ScrollView{
+            ScrollView(.vertical, showsIndicators: false){
+                Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
                 VStack{
                     ZStack{
                         VStack{
-                            if removeLaunchScreen == false{//turn back to false
-                                LottieView(fileName: "20546-i-stay-at-home")
-                                .background(
-                                    BlurView(style: .systemUltraThinMaterial)
-                                        .cornerRadius(checkHeight() ? 30 : 0)
-                                        .shadow(radius: 30)
-                                        .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
+                            if removeLaunchScreen == false {//turn back to false
+                                LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
+                                    .background(
+                                        BlurView(style: .systemUltraThinMaterial)
+                                            .cornerRadius(checkHeight() ? 30 : 0)
+                                            .shadow(radius: 30)
+                                            .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
                                 )
-                                .padding(.bottom, 26)
                             }
-
+                            
                             Spacer(minLength: 310)
                             Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height) : 140)
                         }
                         
                         VStack{
                             SummaryView(globalTotalCases: globalTCases, globalDeathCases: globalDCases, globalRecoveredCases: globalRCases)
-                                .padding(.top, (checkHeight()) ? 80 : 125)
+                                .padding(.top, (checkHeight()) ? 340 : 385)
                         }
+                        .padding(.vertical, checkHeight() ? 20 : -40)
                         
                         Button(action: {
-                            print("Tap")
                             self.show.toggle()
                         }, label: {
                             ZStack {
@@ -87,29 +87,25 @@ struct ContentView: View {
                                             Text(self.summary[$0].Country)
                                         }
                                     })
-                                    .labelsHidden()
+                                        .labelsHidden()
                                 }
                             }
-                            
                         })
                             .animation(.spring(response: 0.4, dampingFraction: 0.67, blendDuration: 0.9))
-                            .padding(.bottom, (checkHeight()) ? 179 : 135)//position of the country button on the ZStack
+                            .padding(.bottom, (checkHeight()) ? /*179 : 135*/ 153 : 105)//position of the country button on the ZStack
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
             
             StartupView()
-                .frame(width: removeLaunchScreen ? UIScreen.main.bounds.width : 0, height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-//                .cornerRadius(removeLaunchScreen ? 0 : 550)
+                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
                 .opacity(removeLaunchScreen ? 1 : 0)
                 .animation(Animation.easeInOut(duration: 0.8))
-
                 .onAppear(perform: remove)
         }
         .edgesIgnoringSafeArea(.all)
-        .onAppear(perform: self.loadData)
-    
+        .onAppear(perform: loadData)
+        
     }
     
     func checkHeight() -> Bool{
@@ -145,7 +141,7 @@ struct ContentView: View {
     }
     
     func remove(){
-        DispatchQueue.main.asyncAfter(deadline: .now()+2.7){
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.6){
             self.removeLaunchScreen.toggle()
         }
     }
@@ -153,6 +149,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()//.colorScheme(.dark)
+        ContentView().colorScheme(.dark)
     }
 }

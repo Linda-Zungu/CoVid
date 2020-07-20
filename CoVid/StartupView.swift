@@ -9,13 +9,21 @@
 import SwiftUI
 
 struct StartupView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack{
             Rectangle()
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.white)
+                .foregroundColor((colorScheme == .dark) ? .black : .white)
+                .overlay(
+                    BlurView(style: .systemUltraThinMaterialDark)
+                        .edgesIgnoringSafeArea(.all)
+            )
             
-            LottieView(fileName: "17801-stay-at-home")
+            LottieView(fileName: "17856-defender-coronavirus", loopSpeed: 2)
+            .frame(width: 70)
         }
     }
 }

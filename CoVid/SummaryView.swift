@@ -17,42 +17,44 @@ struct SummaryView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .padding()
-            .frame(height: 200)
+            .frame(height: 430)
             .foregroundColor(Color.init(.quaternarySystemFill))
             .overlay(
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     Text("World Statistics")
-                        .font(.headline)
+                        .font(.system(size: 20))
+//                        .font(.headline)
+                    .bold()
                         .padding()
                         
-                    HStack(alignment: .center){
-                        VStack{
-                            Text("Cases")
-                            Text("\(globalTotalCases)")
-                                .bold()
-                                .font(.system(size: 25))
-                                .padding()
+                    
+                    VStack(alignment: .center){
+                        Group{
+                            VStack{
+                                Text("Cases")
+                                Text("\(globalTotalCases)")
+                                    .bold()
+                                    .font(.system(size: 25))
+                                    .padding(.top)
+                            }
+                            
+                            VStack{
+                                Text("Deaths")
+                                Text("\(globalDeathCases)")
+                                    .bold()
+                                    .font(.system(size: 25))
+                                    .padding(.top)
+                            }
+                            
+                            VStack{
+                                Text("Recovered")
+                                Text("\(globalRecoveredCases)")
+                                    .bold()
+                                    .font(.system(size: 25))
+                                    .padding()
+                            }
                         }
                         .padding()
-                        
-                        VStack{
-                            Text("Deaths")
-                            Text("\(globalDeathCases)")
-                                .bold()
-                                .font(.system(size: 25))
-                                .padding()
-                        }
-                        .padding()
-                        
-                        VStack{
-                            Text("Recovered")
-                            Text("\(globalRecoveredCases)")
-                                .bold()
-                                .font(.system(size: 25))
-                                .padding()
-                        }
-                        .padding()
-        //                .padding(.leading)
                     }
                 }
             )
@@ -61,6 +63,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView(globalTotalCases: 1001, globalDeathCases: 100, globalRecoveredCases: 100).previewLayout(.sizeThatFits)
+        SummaryView(globalTotalCases: 14054565, globalDeathCases: 100, globalRecoveredCases: 100).previewLayout(.sizeThatFits)
     }
 }
