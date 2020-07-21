@@ -44,7 +44,7 @@ struct ContentView: View {
                 VStack{
                     ZStack{
                         VStack{
-                            if removeLaunchScreen == true {//turn back to false
+                            if removeLaunchScreen == false {//turn back to false
                                 LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
                                     .background(
                                         BlurView(style: .systemUltraThinMaterial)
@@ -96,20 +96,26 @@ struct ContentView: View {
                                 }
                             }
                         })
-//                            .animation(.easeInOut)
                             .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
                             .padding(.bottom, (checkHeight()) ? /*179 : 135*/ 153 : 105)//position of the country button on the ZStack
                     }
+                    
+                    if(summary.count > 0){
+                        Text("\(summary[selectedCountry].Country)\n\(summary[selectedCountry].TotalConfirmed)\n\(summary[selectedCountry].TotalDeaths)\n\(summary[selectedCountry].TotalRecovered)")
+                    }
+                    
+                    
+                    Text("cool")
                 }
             }
             
-//            StartupView()
-//                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-//                .opacity(removeLaunchScreen ? 1 : 0)
-//                .animation(Animation.easeInOut(duration: 0.8))
-//                .onAppear(perform: remove)
+            StartupView()
+                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+                .opacity(removeLaunchScreen ? 1 : 0)
+                .animation(Animation.easeInOut(duration: 0.8))
+                .onAppear(perform: remove)
         }
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
         .onAppear(perform: loadData)
         
     }
@@ -132,7 +138,6 @@ struct ContentView: View {
                     
                     DispatchQueue.main.async {
                         self.summary = decodedResponse.Countries
-//                        print(self.summary[0].TotalConfirmed)
                         for i in 0...self.summary.count-1{
                             self.globalTCases += self.summary[i].TotalConfirmed
                             self.globalDCases += self.summary[i].TotalDeaths
