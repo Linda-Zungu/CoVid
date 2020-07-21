@@ -39,12 +39,14 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                .edgesIgnoringSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false){
                 Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
                 VStack{
                     ZStack{
+                        Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
                         VStack{
-                            if removeLaunchScreen == false {//turn back to false
+                            if removeLaunchScreen == true {//turn back to false
                                 LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
                                     .background(
                                         BlurView(style: .systemUltraThinMaterial)
@@ -103,17 +105,14 @@ struct ContentView: View {
                     if(summary.count > 0){
                         Text("\(summary[selectedCountry].Country)\n\(summary[selectedCountry].TotalConfirmed)\n\(summary[selectedCountry].TotalDeaths)\n\(summary[selectedCountry].TotalRecovered)")
                     }
-                    
-                    
-                    Text("cool")
                 }
             }
             
-            StartupView()
-                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-                .opacity(removeLaunchScreen ? 1 : 0)
-                .animation(Animation.easeInOut(duration: 0.8))
-                .onAppear(perform: remove)
+//            StartupView()
+//                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+//                .opacity(removeLaunchScreen ? 1 : 0)
+//                .animation(Animation.easeInOut(duration: 0.8))
+//                .onAppear(perform: remove)
         }
         .edgesIgnoringSafeArea(.top)
         .onAppear(perform: loadData)
@@ -160,6 +159,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()//.colorScheme(.dark)
+        ContentView().colorScheme(.dark)
     }
 }
