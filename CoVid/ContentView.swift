@@ -44,7 +44,7 @@ struct ContentView: View {
                 VStack{
                     ZStack{
                         VStack{
-                            if removeLaunchScreen == false {//turn back to false
+                            if removeLaunchScreen == true {//turn back to false
                                 LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
                                     .background(
                                         BlurView(style: .systemUltraThinMaterial)
@@ -67,19 +67,22 @@ struct ContentView: View {
                         Button(action: {
                             self.show.toggle()
                         }, label: {
-                            ZStack {
+                            ZStack{
                                 Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
-                                    .padding(.bottom, show ? 0 : 250/*280*/)
-                                    .frame(width: show ? 100 : UIScreen.main.bounds.width-130, height: show ? 20 : 270 /*320*/)
+                                    .padding(.bottom, show ? 0 : 250)
+                                    .frame(minWidth: show ? .leastNonzeroMagnitude+130 : UIScreen.main.bounds.width-190, maxWidth: show ? UIScreen.main.bounds.width : UIScreen.main.bounds.width-190, minHeight: 0, maxHeight: 270)
                                     .font(.headline)
                                     .foregroundColor((colorScheme == .dark) ? .white : .black)
                                     .padding()
                                     .padding(.horizontal, 30)
+                                    .fixedSize()
                                     .background(
                                         BlurView(style: .systemUltraThinMaterial)
                                             .cornerRadius(40)
                                             .shadow(radius: 30, y: 7)
-                                )
+                                            .padding(.horizontal, show ? 20 : -22)
+                                    )
+                                    .multilineTextAlignment(.center).lineLimit(1).minimumScaleFactor(0.6)
                                 
                                 if show == false{
                                     Picker(selection: $selectedCountry, label: Text("Choose Country"), content: {
@@ -88,20 +91,23 @@ struct ContentView: View {
                                         }
                                     })
                                         .labelsHidden()
+                                        .opacity(show ? 0 : 1)
+                                    
                                 }
                             }
                         })
-                            .animation(.spring(response: 0.4, dampingFraction: 0.67, blendDuration: 0.9))
+//                            .animation(.easeInOut)
+                            .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
                             .padding(.bottom, (checkHeight()) ? /*179 : 135*/ 153 : 105)//position of the country button on the ZStack
                     }
                 }
             }
             
-            StartupView()
-                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-                .opacity(removeLaunchScreen ? 1 : 0)
-                .animation(Animation.easeInOut(duration: 0.8))
-                .onAppear(perform: remove)
+//            StartupView()
+//                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+//                .opacity(removeLaunchScreen ? 1 : 0)
+//                .animation(Animation.easeInOut(duration: 0.8))
+//                .onAppear(perform: remove)
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear(perform: loadData)
@@ -149,6 +155,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().colorScheme(.dark)
+        ContentView()//.colorScheme(.dark)
     }
 }
