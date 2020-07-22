@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct MyImageView: View {
-    var imageName: String
+    var imageName = "use_mask_black_woman1-1"
     var body: some View {
-        Image("use_mask_black_woman1-1")
+        Image(imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
     }

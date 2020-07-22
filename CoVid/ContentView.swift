@@ -37,86 +37,144 @@ struct ContentView: View {
     @State var globalRCases = 0
     
     var body: some View {
-        ZStack{
-            Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-                .edgesIgnoringSafeArea(.all)
-            ScrollView(.vertical, showsIndicators: false){
-                Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-                VStack{
-                    ZStack{
-                        Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-                        VStack{
-                            if removeLaunchScreen == true {//turn back to false
+//        ZStack{
+//            Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+//                .edgesIgnoringSafeArea(.all)
+//            ScrollView(.vertical, showsIndicators: false){
+//                Color((colorScheme == .dark) ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+//                VStack{
+//                    ZStack{
+//                        VStack{
+//                            if removeLaunchScreen == true {//turn back to false
+//                                LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
+//                                    .background(
+//                                        BlurView(style: .systemUltraThinMaterial)
+//                                            .cornerRadius(checkHeight() ? 30 : 0)
+//                                            .shadow(radius: 30)
+//                                            .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
+//                                )
+//                            }
+//
+////                            Spacer(minLength: 310)
+//                            Spacer(minLength: checkHeight() ? /*23/100*(UIScreen.main.bounds.height)*/ 61/100*(UIScreen.main.bounds.height) : 440/*140*/)
+//                        }
+//
+//
+//                        SummaryView(globalTotalCases: globalTCases, globalDeathCases: globalDCases, globalRecoveredCases: globalRCases)
+//                        .padding(.top, (checkHeight()) ? /*342*/385 : /*315*/380)
+//
+//                        Button(action: {
+//                                self.show.toggle()
+//                            }, label: {
+//                                ZStack{
+//                                    Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
+//                                        .padding(.bottom, show ? 0 : 250)
+//                                        .frame(minWidth: show ? .leastNonzeroMagnitude+130 : UIScreen.main.bounds.width-190, maxWidth: show ? UIScreen.main.bounds.width : UIScreen.main.bounds.width-190, minHeight: 0, maxHeight: 270)
+//                                        .font(.headline)
+//                                        .foregroundColor((colorScheme == .dark) ? .white : .black)
+//                                        .padding()
+//                                        .padding(.horizontal, 30)
+//                                        .fixedSize()
+//                                        .background(
+//                                            BlurView(style: .systemUltraThinMaterial)
+//                                                .cornerRadius(40)
+//                                                .shadow(radius: 30, y: 7)
+//                                                .padding(.horizontal, show ? 20 : -22)
+//                                        )
+//                                        .multilineTextAlignment(.center).lineLimit(1).minimumScaleFactor(0.6)
+//
+//                                    if show == false{
+//                                        Picker(selection: $selectedCountry, label: Text("Choose Country"), content: {
+//                                            ForEach(0..<summary.count) {
+//                                                Text(self.summary[$0].Country)
+//                                            }
+//                                        })
+//                                            .labelsHidden()
+//                                            .opacity(show ? 0 : 1)
+//
+//                                    }
+//                                }
+//                            })
+//                                .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
+//                                .padding(.bottom, (checkHeight()) ? /*179 : 135*/ 153 : 105)//position of the country button on the ZStack
+//                        }
+//                        .padding(.vertical, checkHeight() ? 21 : 0)
+//
+//
+////                    }
+//
+//                    if(summary.count > 0){
+//                        Text("\(summary[selectedCountry].Country)\n\(summary[selectedCountry].TotalConfirmed)\n\(summary[selectedCountry].TotalDeaths)\n\(summary[selectedCountry].TotalRecovered)")
+//                    }
+//                }
+//            }
+//
+////            StartupView()
+////                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+////                .opacity(removeLaunchScreen ? 1 : 0)
+////                .animation(Animation.easeInOut(duration: 0.8))
+////                .onAppear(perform: remove)
+//        }
+//        .edgesIgnoringSafeArea(.top)
+//        .onAppear(perform: loadData)
+        ScrollView{
+            VStack{
+                ZStack(alignment: .center){
+                    VStack{
+                        BlurView(style: .systemUltraThinMaterial)
+                            .frame(height: checkHeight() ? 330 : 270)
+                            .cornerRadius(checkHeight() ? 30 : 0)
+                            .shadow(radius: 30)
+                            .overlay(
                                 LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
-                                    .background(
-                                        BlurView(style: .systemUltraThinMaterial)
-                                            .cornerRadius(checkHeight() ? 30 : 0)
-                                            .shadow(radius: 30)
-                                            .frame(height: (UIScreen.main.bounds.height > 735) ? 355 : 335)
-                                )
-                            }
+                            )
+                        SummaryView(globalTotalCases: 0, globalDeathCases: 0, globalRecoveredCases: 0)
+                    }
+                    Button(action: {
+                        self.show.toggle()
+                    }, label: {
+                        ZStack{
+                            Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
+                                .padding(.bottom, show ? 0 : 250)
+                                .frame(minWidth: show ? .leastNonzeroMagnitude+130 : UIScreen.main.bounds.width-190, maxWidth: show ? UIScreen.main.bounds.width : UIScreen.main.bounds.width-190, minHeight: 0, maxHeight: 270)
+                                .font(.headline)
+                                .foregroundColor((colorScheme == .dark) ? .white : .black)
+                                .padding()
+                                .padding(.horizontal, 30)
+                                .fixedSize()
+                                .background(
+                                    BlurView(style: .systemUltraThinMaterial)
+                                        .cornerRadius(40)
+                                        .shadow(radius: 30, y: 7)
+                                        .padding(.horizontal, show ? 20 : -22)
+                            )
+                                .multilineTextAlignment(.center).lineLimit(1).minimumScaleFactor(0.6)
                             
-                            Spacer(minLength: 310)
-                            Spacer(minLength: checkHeight() ? 23/100*(UIScreen.main.bounds.height) : 140)
-                        }
-                        
-                        VStack{
-                            SummaryView(globalTotalCases: globalTCases, globalDeathCases: globalDCases, globalRecoveredCases: globalRCases)
-                                .padding(.top, (checkHeight()) ? 340 : 385)
-                        }
-                        .padding(.vertical, checkHeight() ? 20 : -40)
-                        
-                        Button(action: {
-                            self.show.toggle()
-                        }, label: {
-                            ZStack{
-                                Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
-                                    .padding(.bottom, show ? 0 : 250)
-                                    .frame(minWidth: show ? .leastNonzeroMagnitude+130 : UIScreen.main.bounds.width-190, maxWidth: show ? UIScreen.main.bounds.width : UIScreen.main.bounds.width-190, minHeight: 0, maxHeight: 270)
-                                    .font(.headline)
-                                    .foregroundColor((colorScheme == .dark) ? .white : .black)
-                                    .padding()
-                                    .padding(.horizontal, 30)
-                                    .fixedSize()
-                                    .background(
-                                        BlurView(style: .systemUltraThinMaterial)
-                                            .cornerRadius(40)
-                                            .shadow(radius: 30, y: 7)
-                                            .padding(.horizontal, show ? 20 : -22)
-                                    )
-                                    .multilineTextAlignment(.center).lineLimit(1).minimumScaleFactor(0.6)
-                                
-                                if show == false{
-                                    Picker(selection: $selectedCountry, label: Text("Choose Country"), content: {
-                                        ForEach(0..<summary.count) {
-                                            Text(self.summary[$0].Country)
-                                        }
-                                    })
-                                        .labelsHidden()
-                                        .opacity(show ? 0 : 1)
-                                    
-                                }
+                            if show == false{
+                                Picker(selection: $selectedCountry, label: Text("Choose Country"), content: {
+                                    ForEach(0..<summary.count) {
+                                        Text(self.summary[$0].Country)
+                                    }
+                                })
+                                    .labelsHidden()
+                                    .opacity(show ? 0 : 1)
                             }
-                        })
-                            .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
-                            .padding(.bottom, (checkHeight()) ? /*179 : 135*/ 153 : 105)//position of the country button on the ZStack
-                    }
-                    
-                    if(summary.count > 0){
-                        Text("\(summary[selectedCountry].Country)\n\(summary[selectedCountry].TotalConfirmed)\n\(summary[selectedCountry].TotalDeaths)\n\(summary[selectedCountry].TotalRecovered)")
-                    }
+                        }
+                    })
+                        .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
+                        .padding(.bottom, checkHeight() ? 110 : 170)
                 }
+                Spacer(minLength: 30)
+                    
+                    
+                    
+                
+                Text("Jll")
             }
             
-//            StartupView()
-//                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-//                .opacity(removeLaunchScreen ? 1 : 0)
-//                .animation(Animation.easeInOut(duration: 0.8))
-//                .onAppear(perform: remove)
+//            .frame(width: UIScreen.main.bounds.width)
         }
         .edgesIgnoringSafeArea(.top)
-        .onAppear(perform: loadData)
-        
     }
     
     func checkHeight() -> Bool{
@@ -159,6 +217,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().colorScheme(.dark)
+        ContentView()//.colorScheme(.dark)
     }
 }
