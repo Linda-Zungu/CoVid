@@ -55,6 +55,7 @@ struct SummaryView: View {
                             }
                         }
                         .padding()
+                        .padding(.horizontal, 80)
                     }
                 }
             )
