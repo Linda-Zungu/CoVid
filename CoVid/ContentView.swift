@@ -36,6 +36,8 @@ struct ContentView: View {
     @State var globalDCases = 0
     @State var globalRCases = 0
     
+    @State var countRefreshes = 1
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(alignment: .leading){
@@ -60,13 +62,19 @@ struct ContentView: View {
                             .padding(.top, 20)
                         }
                         
-                        SummaryView(globalTotalCases: globalTCases, globalDeathCases: globalDCases, globalRecoveredCases: globalRCases)
+                        SummaryView(globalTotalCases: globalTCases/(self.countRefreshes), globalDeathCases: globalDCases/(self.countRefreshes), globalRecoveredCases: globalRCases/(self.countRefreshes))
                     }
                     Button(action: {
-                        self.show.toggle()
+                        if self.summary.count > 0 {
+                            self.show.toggle()
+                        }
+                        else{
+                            self.countRefreshes += 1
+                            self.loadData()
+                        }
                     }, label: {
                         ZStack{
-                            Text((summary.count > 0) ? summary[selectedCountry].Country : "World")
+                            Text((summary.count > 0) ? summary[selectedCountry].Country : "Refresh")
                                 .padding(.bottom, show ? 0 : 250)
                                 .frame(minWidth: show ? .leastNonzeroMagnitude+130 : UIScreen.main.bounds.width-190, maxWidth: show ? UIScreen.main.bounds.width : UIScreen.main.bounds.width-190, minHeight: 0, maxHeight: 270)
                                 .font(.headline)
