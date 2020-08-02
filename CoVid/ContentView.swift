@@ -38,20 +38,29 @@ struct ContentView: View {
     
     @State var countRefreshes = 1
     
+    @State var tabSelection = 2
     var body: some View {
         ZStack{
-            TabView{
+            TabView(selection: $tabSelection){
+                PrecautionsView()
+                    .tabItem {
+                        Image(systemName: "staroflife")
+                            .font(.system(size: 25))
+                        Text("Precautions")
+                }
+                .tag(1)
+                
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(alignment: .leading){
                         ZStack(alignment: .center){
                             VStack{
                                 if removeLaunchScreen == false {
                                     BlurView(style: .systemUltraThinMaterial)
-                                    .frame(height: checkHeight() ? 330 : 280)
-                                    .cornerRadius(checkHeight() ? 30 : 0)
-                                    .shadow(radius: 30)
-                                    .overlay(
-                                        LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
+                                        .frame(height: checkHeight() ? 330 : 280)
+                                        .cornerRadius(checkHeight() ? 30 : 0)
+                                        .shadow(radius: 30)
+                                        .overlay(
+                                            LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
                                     )
                                 }
                                 
@@ -61,7 +70,7 @@ struct ContentView: View {
                                 }
                                 else{
                                     CountrySummaryView(countryTotalCases: 0, countryDeathCases: 0, countryRecoveredCases: 0, countryNewTotalCases: 0, countryNewDeathCases: 0, countryNewRecoveriesCases: 0)
-                                    .padding(.top, 20)
+                                        .padding(.top, 20)
                                 }
                                 
                                 SummaryView(globalTotalCases: globalTCases/(self.countRefreshes), globalDeathCases: globalDCases/(self.countRefreshes), globalRecoveredCases: globalRCases/(self.countRefreshes))
@@ -111,13 +120,27 @@ struct ContentView: View {
                     .frame(width: UIScreen.main.bounds.width)
                 }
                 .edgesIgnoringSafeArea(.top)
+                .tabItem {
+                    Image(systemName: "doc.richtext")
+                        .font(.system(size: 25))
+                    Text("Summary")
+                }
+                .tag(2)
+                
+                SettingsView()
+                .tabItem({
+                    Image(systemName: "gear")
+                        .font(.system(size: 25))
+                    Text("Settings")
+                })
+                .tag(3)
             }
             
             StartupView()
-            .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
-            .opacity(removeLaunchScreen ? 1 : 0)
-            .animation(Animation.easeInOut(duration: 0.8))
-            .onAppear(perform: remove)
+                .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
+                .opacity(removeLaunchScreen ? 1 : 0)
+                .animation(Animation.easeInOut(duration: 0.8))
+                .onAppear(perform: remove)
         }
         .onAppear(perform: loadData)
     }
@@ -165,6 +188,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().colorScheme(.dark)
+        ContentView()//.colorScheme(.dark)
     }
 }

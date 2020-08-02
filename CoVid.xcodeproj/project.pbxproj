@@ -68,6 +68,8 @@
 		643CE8F124BFB38D009AD741 /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE8BA24BFB38D009AD741 /* LottieLogo1_masked.json */; };
 		643CE8F224BFB38D009AD741 /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 643CE8BB24BFB38D009AD741 /* timeremap.json */; };
 		643CE8F424BFB69A009AD741 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE8F324BFB69A009AD741 /* LottieView.swift */; };
+		643E9F7524D432C500B89340 /* PrecautionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E9F7424D432C500B89340 /* PrecautionsView.swift */; };
+		643E9F7724D4424700B89340 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E9F7624D4424700B89340 /* SettingsView.swift */; };
 		647526B724C6386B00196D60 /* 17856-defender-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */; };
 		6497DB9E24C6274F007309BF /* 21163-washing-hands.json in Resources */ = {isa = PBXBuildFile; fileRef = 6497DB9D24C6274F007309BF /* 21163-washing-hands.json */; };
 		649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C324BF03CE00769554 /* AppDelegate.swift */; };
@@ -146,6 +148,8 @@
 		643CE8BA24BFB38D009AD741 /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1_masked.json; sourceTree = "<group>"; };
 		643CE8BB24BFB38D009AD741 /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
 		643CE8F324BFB69A009AD741 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		643E9F7424D432C500B89340 /* PrecautionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecautionsView.swift; sourceTree = "<group>"; };
+		643E9F7624D4424700B89340 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17856-defender-coronavirus.json"; sourceTree = "<group>"; };
 		6497DB9D24C6274F007309BF /* 21163-washing-hands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "21163-washing-hands.json"; sourceTree = "<group>"; };
 		649ED2C024BF03CE00769554 /* CoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +281,8 @@
 				649ED2C324BF03CE00769554 /* AppDelegate.swift */,
 				649ED2C524BF03CE00769554 /* SceneDelegate.swift */,
 				649ED2C724BF03CE00769554 /* ContentView.swift */,
+				643E9F7624D4424700B89340 /* SettingsView.swift */,
+				643E9F7424D432C500B89340 /* PrecautionsView.swift */,
 				6433001524C8E66800A553A4 /* CountrySummaryView.swift */,
 				64E90E4F24C135A20074DEE2 /* StartupView.swift */,
 				643CE8F324BFB69A009AD741 /* LottieView.swift */,
@@ -448,7 +454,9 @@
 				643CE8F424BFB69A009AD741 /* LottieView.swift in Sources */,
 				649ED2C824BF03CE00769554 /* ContentView.swift in Sources */,
 				643CE87F24BF7CCA009AD741 /* BlurView.swift in Sources */,
+				643E9F7524D432C500B89340 /* PrecautionsView.swift in Sources */,
 				6433001624C8E66800A553A4 /* CountrySummaryView.swift in Sources */,
+				643E9F7724D4424700B89340 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
