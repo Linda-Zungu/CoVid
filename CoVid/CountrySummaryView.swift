@@ -20,7 +20,7 @@ struct CountrySummaryView: View {
     var body: some View {
         
         RoundedRectangle(cornerRadius: 20)
-            .frame(minWidth: UIScreen.main.bounds.width-100, maxWidth: UIScreen.main.bounds.width, minHeight: 200, maxHeight: 220)
+            .frame(minWidth: UIScreen.main.bounds.width-100, maxWidth: UIScreen.main.bounds.width, minHeight: 230, maxHeight: 250)
             .padding()
             .foregroundColor(Color.init(.quaternarySystemFill))
             .overlay(
@@ -39,7 +39,7 @@ struct CountrySummaryView: View {
                             .font(.headline)
                             Text("\(countryRecoveredCases)")
                         }
-                        .padding(.top, 10)
+                        .padding(.top, 7)
                         
                         Spacer()
                     }
@@ -64,7 +64,7 @@ struct CountrySummaryView: View {
                             Text((countryNewRecoveriesCases > 0) ? "+\(countryNewRecoveriesCases)" : "\(countryNewRecoveriesCases)")
                                 .foregroundColor((countryNewRecoveriesCases > 0) ? .red : .green)
                         }
-                        .padding(.top, 10)
+                        .padding(.top, 7)
                         
                         Spacer()
                     }

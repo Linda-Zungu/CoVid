@@ -114,6 +114,7 @@ struct ContentView: View {
                             })
                                 .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
                                 .padding(.bottom, checkHeight() ? 370 : 420)
+                            .padding(.top, -30)
                         }
                         Spacer(minLength: 30)
                     }
