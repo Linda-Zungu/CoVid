@@ -109,6 +109,7 @@ struct ContentView: View {
                                         })
                                             .labelsHidden()
                                             .opacity(show ? 0 : 1)
+                                        .frame(width: UIScreen.main.bounds.width/2)
                                     }
                                 }
                             })
