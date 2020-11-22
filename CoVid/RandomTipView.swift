@@ -13,10 +13,7 @@ struct RandomTipView: View {
     var tipNumber: Int
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(height: 70)
-            .padding()
-            .foregroundColor(Color.init(.quaternarySystemFill))
+        BackgroundSubView(backgroundHeight: 102)
             .overlay(
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                     Group{

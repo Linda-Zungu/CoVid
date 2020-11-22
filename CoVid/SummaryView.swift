@@ -15,10 +15,7 @@ struct SummaryView: View {
     var globalRecoveredCases : Int
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .padding()
-            .frame(height: 430)
-            .foregroundColor(Color.init(.quaternarySystemFill))
+        BackgroundSubView(backgroundHeight: 430)
             .overlay(
                 VStack(alignment: .center) {
                     Text("World Statistics")

@@ -18,11 +18,7 @@ struct CountrySummaryView: View {
     var countryNewRecoveriesCases : Int
     
     var body: some View {
-        
-        RoundedRectangle(cornerRadius: 20)
-            .frame(minWidth: UIScreen.main.bounds.width-100, maxWidth: UIScreen.main.bounds.width, minHeight: 230, maxHeight: 250)
-            .padding()
-            .foregroundColor(Color.init(.quaternarySystemFill))
+        BackgroundSubView(backgroundHeight: 262)
             .overlay(
                 HStack{
                     VStack(alignment: .leading){

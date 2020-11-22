@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct BackgroundSubView: View {
+    
+    var backgroundHeight : CGFloat
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RoundedRectangle(cornerRadius: 20)
+            .padding()
+            .frame(height: backgroundHeight)
+            .foregroundColor(Color.init(.quaternarySystemFill))
     }
 }
 
 struct BackgroundSubView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundSubView()
+        BackgroundSubView(backgroundHeight: 100)
+            .previewLayout(.sizeThatFits)
     }
 }
