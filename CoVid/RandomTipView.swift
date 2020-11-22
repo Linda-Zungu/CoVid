@@ -22,6 +22,7 @@ struct RandomTipView: View {
                     Group{
                         Image(systemName: getSysmbolName(tip: findTip()))
                             .font(.system(size: 24.0))
+                            .foregroundColor(changeSymbolColor(tipNumber: tipNumber))
                         Text(findTip())
                     }
                     .padding(.all, 7)
@@ -53,7 +54,7 @@ struct RandomTipView: View {
         }
     }
     
-    func getSysmbolName(tip:String) -> String{
+    func getSysmbolName(tip : String) -> String{
         if(tip == "Wash your hands"){
             return "hands.sparkles.fill"
         }
@@ -77,11 +78,35 @@ struct RandomTipView: View {
         }
     }
     
+    func changeSymbolColor(tipNumber : Int) -> Color{
+        if(tipNumber == 1){
+            return Color.init(.systemGreen)
+        }
+        else if(tipNumber == 2){
+            return Color.init(.systemPurple)
+        }
+        else if(tipNumber == 3){
+            return Color.init(.systemRed)
+        }
+        else if(tipNumber == 4){
+            return Color.init(.systemBlue)
+        }
+        else if(tipNumber == 5){
+            return Color.init(.systemOrange)
+        }
+        else if(tipNumber == 6){
+            return Color.init(.systemYellow)
+        }
+        else{
+            return Color.init(.gray)
+        }
+    }
+    
 }
 
 struct RandomTipView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomTipView(tipNumber: 1)
+        RandomTipView(tipNumber: 2)
             .previewLayout(.sizeThatFits)
     }
 }
