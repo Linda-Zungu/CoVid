@@ -23,9 +23,8 @@ struct SummaryView: View {
                 VStack(alignment: .center) {
                     Text("World Statistics")
                         .font(.system(size: 20))
-//                        .font(.headline)
-                    .bold()
-                        .padding()
+                        .bold()
+                        .padding(.top, 20)
                         
                     
                     VStack(alignment: .center){
@@ -54,8 +53,8 @@ struct SummaryView: View {
                                     .padding()
                             }
                         }
-                        .padding()
-                        .padding(.horizontal, 80)
+                        .padding(12)
+                        .padding(.horizontal,85)
                     }
                 }
             )

@@ -30,7 +30,7 @@ struct ContentView: View {
     @State private var summary = [Countries]()
     @State var show = true
     @State var removeLaunchScreen = true
-    @State var selectedCountry = 154
+    @State var selectedCountry = 158
     
     @State var globalTCases = 0
     @State var globalDCases = 0
@@ -39,6 +39,8 @@ struct ContentView: View {
     @State var countRefreshes = 1
     
     @State var tabSelection = 2
+    
+    let randomTipNumber = Int.random(in: 1...7)
     var body: some View {
         ZStack{
             TabView(selection: $tabSelection){
@@ -74,6 +76,8 @@ struct ContentView: View {
                                 }
                                 
                                 SummaryView(globalTotalCases: globalTCases/(self.countRefreshes), globalDeathCases: globalDCases/(self.countRefreshes), globalRecoveredCases: globalRCases/(self.countRefreshes))
+                                
+                                RandomTipView(tipNumber: randomTipNumber)
                             }
                             Button(action: {
                                 if self.summary.count > 0 {
@@ -115,7 +119,7 @@ struct ContentView: View {
                             })
                                 .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
                                 .padding(.bottom, checkHeight() ? 370 : 420)
-                            .padding(.top, -30)
+                            .padding(.top, -140)
                         }
                         Spacer(minLength: 30)
                     }
@@ -147,10 +151,12 @@ struct ContentView: View {
         .onAppear(perform: loadData)
     }
     
+    //MARK: Check Height
     func checkHeight() -> Bool{
         return UIScreen.main.bounds.height > 740
     }
     
+    //MARK: Load Data
     func loadData(){
         guard let url = URL(string: "https://api.covid19api.com/summary") else {
             print("Invalid url")
@@ -181,6 +187,7 @@ struct ContentView: View {
         }.resume()
     }
     
+    //MARK: Launch Screen
     func remove(){
         DispatchQueue.main.asyncAfter(deadline: .now()+1.6){
             self.removeLaunchScreen.toggle()
