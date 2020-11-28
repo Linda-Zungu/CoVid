@@ -12,13 +12,29 @@ struct PrecautionsView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                VStack{
+                HStack{
+                    VStack(alignment: .leading, spacing: nil){
+                        Text("Wash Your Hands")
+                            .font(.headline)
+                        Spacer()
+                        Text("Practice Physical Distancing")
+                            .font(.headline)
+                        Spacer()
+                        Text("Quarantine")
+                            .font(.headline)
+                        Spacer()
+                        Text("Avoid Touching Your Face")
+                            .font(.headline)
+                        Spacer()
+                        Text("Wear a Mask!")
+                            .font(.headline)
+                    }
+                    .padding()
                     Spacer()
-                    Text("Hello World!")
                 }
                 .frame(width: UIScreen.main.bounds.width)
             }
-            .navigationBarTitle("Precautions", displayMode: .automatic)
+            .navigationBarTitle("Precautions")
         }
     }
 }
