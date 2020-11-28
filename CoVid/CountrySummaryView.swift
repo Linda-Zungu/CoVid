@@ -58,7 +58,7 @@ struct CountrySummaryView: View {
                             Text("New Recoveries")
                                 .font(.headline)
                             Text((countryNewRecoveriesCases > 0) ? "+\(countryNewRecoveriesCases)" : "\(countryNewRecoveriesCases)")
-                                .foregroundColor((countryNewRecoveriesCases > 0) ? .red : .green)
+                                .foregroundColor((countryNewRecoveriesCases > 0) ? .green : .red)
                         }
                         .padding(.top, 7)
                         
