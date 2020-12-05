@@ -30,7 +30,7 @@ struct ContentView: View {
     @State private var summary = [Countries]()
     @State var show = true
     @State var removeLaunchScreen = true
-    @State var selectedCountry = 158
+    @State var selectedCountry = UserSettings().selectedCountry
     
     @State var globalTCases = 0
     @State var globalDCases = 0
@@ -133,7 +133,7 @@ struct ContentView: View {
                 }
                 .tag(2)
                 
-                SettingsView()
+                SettingsView(summary: summary)
                 .tabItem({
                     Image(systemName: "gear")
                         .font(.system(size: 25))

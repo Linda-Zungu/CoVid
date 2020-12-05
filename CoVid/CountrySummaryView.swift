@@ -28,11 +28,11 @@ struct CountrySummaryView: View {
                             Text("\(countryTotalCases)")
                             
                             Text("Deaths")
-                            .font(.headline)
+                                .font(.headline)
                             Text("\(countryDeathCases)")
                             
                             Text("Recovered")
-                            .font(.headline)
+                                .font(.headline)
                             Text("\(countryRecoveredCases)")
                         }
                         .padding(.top, 7)
@@ -40,12 +40,13 @@ struct CountrySummaryView: View {
                         Spacer()
                     }
                     .padding()
+                    .padding(.horizontal, 6)
                     
                     Spacer()
                     
                     VStack(alignment: .leading){
                         Group{
-                            Text("New Total")
+                            Text("New Cases")
                                 .font(.headline)
                             Text((countryNewTotalCases > 0) ? "+\(countryNewTotalCases)" : "\(countryNewTotalCases)")
                                 .foregroundColor((countryNewTotalCases > 0) ? .red : .green)
@@ -66,7 +67,7 @@ struct CountrySummaryView: View {
                     }
                     .padding()
                 }
-            .padding()
+                .padding()
             )
     }
 }
