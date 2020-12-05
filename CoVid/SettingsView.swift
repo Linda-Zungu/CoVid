@@ -9,14 +9,28 @@
 import SwiftUI
 
 struct SettingsView: View {
+    var summary : [Countries]
+    @ObservedObject var userSettings = UserSettings()
+    
     var body: some View {
         NavigationView{
             Form{
-//                Section(header: Text("STUFF")){
-//                    Picker(selection: $chooseDefaultCountry, label: Text("Choose Default Country")){
-//                        ForEach(0..<)
-//                    }
-//                }
+                Section(header: Text("COUNTRY")){
+                    Picker(selection: $userSettings.selectedCountry, label:
+                            HStack{
+                                Text("Default Country")
+                                Spacer()
+                                Text(summary.count == 0 ? "0" : "\(summary[userSettings.selectedCountry].Country)")
+                                    .padding(.horizontal)
+                            }
+                           , content: {
+                            ForEach(0..<self.summary.count){
+                                Text("\(self.summary[$0].Country)")
+                            }
+                           })
+                        .pickerStyle(MenuPickerStyle())
+                }
+                
                 Section(header: Text("ABOUT")){
                     HStack{
                         Text("Version")
@@ -32,6 +46,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(summary: [Countries.init(Country: "cool", NewConfirmed: 1, TotalConfirmed: 2, NewDeaths: 2, TotalDeaths: 2, NewRecovered: 2, TotalRecovered: 2, Date: "", CountryCode: "1")])
     }
 }
