@@ -141,6 +141,7 @@ struct ContentView: View {
                 })
                 .tag(3)
             }
+            .accentColor(.orange)
             
             StartupView()
                 .frame(height: removeLaunchScreen ? UIScreen.main.bounds.height : 0)
@@ -171,15 +172,17 @@ struct ContentView: View {
                     
                     DispatchQueue.main.async {
                         self.summary = decodedResponse.Countries
-                        for i in 0...self.summary.count-1{
+                        print(summary)
+                        print(self.summary.count)
+                        for i in 0..<self.summary.count{
                             if self.summary[i].Country == "South Africa"{
-                                print(i)
+                                print("SA:",i)
                             }
                             self.globalTCases += self.summary[i].TotalConfirmed
                             self.globalDCases += self.summary[i].TotalDeaths
                             self.globalRCases += self.summary[i].TotalRecovered
                         }
-                        print(self.globalTCases)
+                        print("TC:",self.globalTCases)
                     }
                     return
                 }
