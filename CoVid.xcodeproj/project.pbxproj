@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		640318A124BF11FC00863F5A /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A024BF11FC00863F5A /* MyImageView.swift */; };
 		640318A324BF186200863F5A /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640318A224BF186200863F5A /* SummaryView.swift */; };
+		6404B093257B6C190093731A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6404B092257B6C190093731A /* UserSettings.swift */; };
+		642369142569EA82009CEC44 /* RandomTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642369132569EA82009CEC44 /* RandomTipView.swift */; };
 		6433001624C8E66800A553A4 /* CountrySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6433001524C8E66800A553A4 /* CountrySummaryView.swift */; };
 		643CE87F24BF7CCA009AD741 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE87E24BF7CCA009AD741 /* BlurView.swift */; };
 		643CE88224BFB278009AD741 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 643CE88124BFB278009AD741 /* Lottie */; };
@@ -70,6 +72,7 @@
 		643CE8F424BFB69A009AD741 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CE8F324BFB69A009AD741 /* LottieView.swift */; };
 		643E9F7524D432C500B89340 /* PrecautionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E9F7424D432C500B89340 /* PrecautionsView.swift */; };
 		643E9F7724D4424700B89340 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E9F7624D4424700B89340 /* SettingsView.swift */; };
+		646C0DB4256B1508004B1871 /* BackgroundSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C0DB3256B1508004B1871 /* BackgroundSubView.swift */; };
 		647526B724C6386B00196D60 /* 17856-defender-coronavirus.json in Resources */ = {isa = PBXBuildFile; fileRef = 647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */; };
 		6497DB9E24C6274F007309BF /* 21163-washing-hands.json in Resources */ = {isa = PBXBuildFile; fileRef = 6497DB9D24C6274F007309BF /* 21163-washing-hands.json */; };
 		649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649ED2C324BF03CE00769554 /* AppDelegate.swift */; };
@@ -90,6 +93,8 @@
 /* Begin PBXFileReference section */
 		640318A024BF11FC00863F5A /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		640318A224BF186200863F5A /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		6404B092257B6C190093731A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		642369132569EA82009CEC44 /* RandomTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTipView.swift; sourceTree = "<group>"; };
 		6433001524C8E66800A553A4 /* CountrySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySummaryView.swift; sourceTree = "<group>"; };
 		643CE87E24BF7CCA009AD741 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		643CE88424BFB38D009AD741 /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
@@ -150,6 +155,7 @@
 		643CE8F324BFB69A009AD741 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		643E9F7424D432C500B89340 /* PrecautionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecautionsView.swift; sourceTree = "<group>"; };
 		643E9F7624D4424700B89340 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		646C0DB3256B1508004B1871 /* BackgroundSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSubView.swift; sourceTree = "<group>"; };
 		647526B624C6386B00196D60 /* 17856-defender-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17856-defender-coronavirus.json"; sourceTree = "<group>"; };
 		6497DB9D24C6274F007309BF /* 21163-washing-hands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "21163-washing-hands.json"; sourceTree = "<group>"; };
 		649ED2C024BF03CE00769554 /* CoVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,7 @@
 		649ED2CC24BF03CF00769554 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		649ED2CF24BF03CF00769554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		649ED2D124BF03CF00769554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64AA912D257DA4880068DB1C /* CoVid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoVid.entitlements; sourceTree = "<group>"; };
 		64CF873924C61CDA0080BCC9 /* 19823-stay-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19823-stay-home.json"; sourceTree = "<group>"; };
 		64CF873B24C620E80080BCC9 /* 18939-soap-vs-coronavirus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "18939-soap-vs-coronavirus.json"; sourceTree = "<group>"; };
 		64CF90B524C10B2E0043D2B5 /* 17801-stay-at-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "17801-stay-at-home.json"; sourceTree = "<group>"; };
@@ -278,16 +285,20 @@
 		649ED2C224BF03CE00769554 /* CoVid */ = {
 			isa = PBXGroup;
 			children = (
+				64AA912D257DA4880068DB1C /* CoVid.entitlements */,
 				649ED2C324BF03CE00769554 /* AppDelegate.swift */,
 				649ED2C524BF03CE00769554 /* SceneDelegate.swift */,
 				649ED2C724BF03CE00769554 /* ContentView.swift */,
+				6404B092257B6C190093731A /* UserSettings.swift */,
 				643E9F7624D4424700B89340 /* SettingsView.swift */,
 				643E9F7424D432C500B89340 /* PrecautionsView.swift */,
 				6433001524C8E66800A553A4 /* CountrySummaryView.swift */,
+				646C0DB3256B1508004B1871 /* BackgroundSubView.swift */,
 				64E90E4F24C135A20074DEE2 /* StartupView.swift */,
 				643CE8F324BFB69A009AD741 /* LottieView.swift */,
 				643CE87E24BF7CCA009AD741 /* BlurView.swift */,
 				640318A224BF186200863F5A /* SummaryView.swift */,
+				642369132569EA82009CEC44 /* RandomTipView.swift */,
 				640318A024BF11FC00863F5A /* MyImageView.swift */,
 				649ED2C924BF03CF00769554 /* Assets.xcassets */,
 				643CE88324BFB38D009AD741 /* TestAnimations */,
@@ -447,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				640318A124BF11FC00863F5A /* MyImageView.swift in Sources */,
+				646C0DB4256B1508004B1871 /* BackgroundSubView.swift in Sources */,
 				649ED2C424BF03CE00769554 /* AppDelegate.swift in Sources */,
 				64E90E5024C135A20074DEE2 /* StartupView.swift in Sources */,
 				640318A324BF186200863F5A /* SummaryView.swift in Sources */,
@@ -456,7 +468,9 @@
 				643CE87F24BF7CCA009AD741 /* BlurView.swift in Sources */,
 				643E9F7524D432C500B89340 /* PrecautionsView.swift in Sources */,
 				6433001624C8E66800A553A4 /* CountrySummaryView.swift in Sources */,
+				6404B093257B6C190093731A /* UserSettings.swift in Sources */,
 				643E9F7724D4424700B89340 /* SettingsView.swift in Sources */,
+				642369142569EA82009CEC44 /* RandomTipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoVid/CoVid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CoVid/Preview Content\"";
 				DEVELOPMENT_TEAM = LH25QTPT7B;
@@ -606,6 +621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Linda-Zungu.CoVid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -615,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoVid/CoVid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CoVid/Preview Content\"";
 				DEVELOPMENT_TEAM = LH25QTPT7B;
@@ -627,6 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Linda-Zungu.CoVid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
