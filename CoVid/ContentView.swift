@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct Response: Codable{
     var Countries : [Countries]
@@ -49,8 +50,8 @@ struct ContentView: View {
                         Image(systemName: "staroflife")
                             .font(.system(size: 25))
                         Text("Precautions")
-                }
-                .tag(1)
+                    }
+                    .tag(1)
                 
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(alignment: .leading){
@@ -63,7 +64,7 @@ struct ContentView: View {
                                         .shadow(radius: 30)
                                         .overlay(
                                             LottieView(fileName: "20546-i-stay-at-home", loopMode: .repeat(2))
-                                    )
+                                        )
                                 }
                                 
                                 if summary.count > 0 {
@@ -102,7 +103,7 @@ struct ContentView: View {
                                                 .cornerRadius(40)
                                                 .shadow(radius: 30, y: 7)
                                                 .padding(.horizontal, show ? 20 : -22)
-                                    )
+                                        )
                                         .multilineTextAlignment(.center).lineLimit(1).minimumScaleFactor(0.6)
                                     
                                     if show == false{
@@ -111,14 +112,14 @@ struct ContentView: View {
                                                 Text(self.summary[$0].Country)
                                             }
                                         })
-                                            .labelsHidden()
-                                            .opacity(show ? 0 : 1)
+                                        .labelsHidden()
+                                        .opacity(show ? 0 : 1)
                                         .frame(width: UIScreen.main.bounds.width/2)
                                     }
                                 }
                             })
-                                .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
-                                .padding(.bottom, checkHeight() ? 370 : 420)
+                            .animation(.spring(response: 0.4, dampingFraction: 0.75, blendDuration: 0.9))
+                            .padding(.bottom, checkHeight() ? 370 : 420)
                             .padding(.top, -140)
                         }
                         Spacer(minLength: 30)
@@ -134,12 +135,12 @@ struct ContentView: View {
                 .tag(2)
                 
                 SettingsView(summary: summary)
-                .tabItem({
-                    Image(systemName: "gear")
-                        .font(.system(size: 25))
-                    Text("Settings")
-                })
-                .tag(3)
+                    .tabItem({
+                        Image(systemName: "gear")
+                            .font(.system(size: 25))
+                        Text("Settings")
+                    })
+                    .tag(3)
             }
             .accentColor(.orange)
             
@@ -172,17 +173,18 @@ struct ContentView: View {
                     
                     DispatchQueue.main.async {
                         self.summary = decodedResponse.Countries
-                        print(summary)
-                        print(self.summary.count)
+//                        print(summary)
+//                        print(self.summary.count)
                         for i in 0..<self.summary.count{
-                            if self.summary[i].Country == "South Africa"{
-                                print("SA:",i)
-                            }
+//                            if self.summary[i].Country == "South Africa"{
+//                                print("SA:",i)
+//                            }
                             self.globalTCases += self.summary[i].TotalConfirmed
                             self.globalDCases += self.summary[i].TotalDeaths
                             self.globalRCases += self.summary[i].TotalRecovered
                         }
-                        print("TC:",self.globalTCases)
+//                        print("TC:",self.globalTCases)
+                        notification(hour: 11, minute: 00, second: 0)
                     }
                     return
                 }
@@ -195,6 +197,43 @@ struct ContentView: View {
         DispatchQueue.main.asyncAfter(deadline: .now()+1.6){
             self.removeLaunchScreen.toggle()
         }
+    }
+    
+    //MARK: Notifications
+    func notification(hour: Int, minute: Int, second: Int){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.subtitle = summary.count == 0 ? "Covid Statistics": "Today in \(summary[selectedCountry].Country)"
+        content.body = "New Cases: \(summary[selectedCountry].NewConfirmed), New Recoveries: \(summary[selectedCountry].NewRecovered), New Deaths: \(summary[selectedCountry].NewDeaths)"
+        content.sound = UNNotificationSound.default
+
+        
+        let gregorian = Calendar(identifier: .gregorian)
+        let now = Date()
+        var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+                        
+        // Change the time to 9:00:00 in your locale
+        components.hour = hour
+        components.minute = minute
+        components.second = second
+                        
+        let date = gregorian.date(from: components)!
+                        
+        let triggerDaily = Calendar.current.dateComponents([.hour,.minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+                      
+                        
+        let request = UNNotificationRequest(identifier: "CommonViewController.Identifier", content: content, trigger: trigger)
+        print("INSIDE NOTIFICATION")
+                        
+        UNUserNotificationCenter.current().add(request)
     }
 }
 
