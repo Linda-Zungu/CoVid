@@ -112,6 +112,7 @@ struct ContentView: View {
                                                 Text(self.summary[$0].Country)
                                             }
                                         })
+                                        .pickerStyle(WheelPickerStyle())
                                         .labelsHidden()
                                         .opacity(show ? 0 : 1)
                                         .frame(width: UIScreen.main.bounds.width/2)
